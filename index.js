@@ -344,7 +344,13 @@ function addContact() {
         clearFrom();
         displayContacts();
         saveIntoLocalStorage();
-        swal("Success", "Contact added successfully!", "success");
+        swal({
+          title: "Success",
+          text: "Contact added successfully!",
+          icon: "success",
+          timer: 1000,
+          buttons: false,
+        });
       };
     } else {
       var contact = {
@@ -365,8 +371,8 @@ function addContact() {
       displayContacts();
       saveIntoLocalStorage();
       swal({
-        title: "",
-        text: "Contact deleted successfully",
+        title: "Success",
+        text: "Contact added successfully!",
         icon: "success",
         timer: 1000,
         buttons: false,
