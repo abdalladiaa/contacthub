@@ -19,10 +19,10 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  
+
   <body>
-    <nav class="navbar bg-body-tertiary sticky-top">
-      <div class="container py-2">
+    <nav class="navbar bg-body-tertiary sticky-top ">
+      <div class="container py-2 ">
         <div class="logo d-flex">
           <div
             class="icon d-flex align-items-center justify-content-center rounded-3 me-2"
@@ -39,12 +39,12 @@
           <button
             onclick="clearFrom()"
             type="button"
-            class="btn accent-btn text-white px-3 rounded-3 me-3 fw-bold"
+            class="btn accent-btn text-white px-3 rounded-3 me-3 fw-bold addBtn d-flex align-items-center"
             data-bs-toggle="modal"
             data-bs-target="#scrollModal"
           >
             <i class="fa-solid fa-plus fs-6"></i>
-            Add Contact
+            Add <span class="d-none d-md-block">Contact</span>
           </button>
 
           <a
@@ -140,7 +140,7 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                   </div>
                   <input
-                  oninput="search(this.value)"
+                    oninput="search(this.value)"
                     type="search"
                     placeholder="Search by name, phone, or email..."
                     id="searchInput"
@@ -259,7 +259,7 @@
             </div>
             <div class="col-md-4 ps-lg-5 py-3 sidebar position-relative">
               <div class="sticky-top">
-                <div class="favorites-section mb-4" >
+                <div class="favorites-section mb-4">
                   <div class="p-3 favorites-sec-bg-color">
                     <div class="d-flex align-items-center gap-3">
                       <div
@@ -398,14 +398,16 @@
                   <span class="required-star">*</span>
                 </label>
                 <input
-                oninput="nameValidation()"
+                  oninput="nameValidation()"
                   type="text"
                   id="fullName"
                   placeholder="Enter full name"
                   class="form-control"
                   required
                 />
-                <p class="invalid-text d-none" id="errName">Name should contain only letters and spaces (2-50 characters)</p>
+                <p class="invalid-text d-none" id="errName">
+                  Name should contain only letters and spaces (2-50 characters)
+                </p>
               </div>
 
               <div class="mb-3">
@@ -414,26 +416,30 @@
                   <span class="required-star">*</span>
                 </label>
                 <input
-                oninput="phoneNumberValidation()"
+                  oninput="phoneNumberValidation()"
                   type="tel"
                   id="PhoneNumber"
                   placeholder="e.g., 01012345678"
                   class="form-control"
                   required
                 />
-                <p class="invalid-text d-none" id="errPhoneNumber">Please enter a valid Egyptian phone number</p>
+                <p class="invalid-text d-none" id="errPhoneNumber">
+                  Please enter a valid Egyptian phone number
+                </p>
               </div>
 
               <div class="mb-3">
                 <label for="Email" class="mb-1 d-block"> Email Address </label>
                 <input
-                oninput="emailValidation()"
+                  oninput="emailValidation()"
                   type="email"
                   id="Email"
                   placeholder="name@example.com"
                   class="form-control"
                 />
-                <p class="invalid-text d-none" id="errEmail">Please enter a valid email address</p>
+                <p class="invalid-text d-none" id="errEmail">
+                  Please enter a valid email address
+                </p>
               </div>
 
               <div class="mb-3">
@@ -500,8 +506,8 @@
               </div>
               <div class="col-md-6" id="formBotton">
                 <button
-                type="submit"
-                id="addBtn"
+                  type="submit"
+                  id="addBtn"
                   onclick="addContact()"
                   class="btn accent-btn text-white w-100 py-2 rounded-4 d-block"
                 >
@@ -509,10 +515,10 @@
                   Save Contact
                 </button>
                 <button
-                type="submit"
-                id="updateBtn"
+                  type="submit"
+                  id="updateBtn"
                   onclick="updateContact()"
-                  class="btn update-btn text-white w-100 py-2 rounded-4 d-none "
+                  class="btn update-btn text-white w-100 py-2 rounded-4 d-none"
                 >
                   <i class="fa-solid fa-pen"></i>
                   Update
@@ -524,8 +530,7 @@
       </div>
     </div>
 
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
