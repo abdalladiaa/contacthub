@@ -21,6 +21,7 @@ displayContacts();
 // ~ Display Contacts
 function displayContacts(arr = allContacts) {
   var totalMarkUp = "";
+  // ! No contact icon
   if (arr.length === 0) {
     totalMarkUp += `
                       <div class="text-center noContactFound">
@@ -37,12 +38,12 @@ function displayContacts(arr = allContacts) {
     `;
   }
   for (var i = 0; i < arr.length; i++) {
-    var selectedGroupe = "";
-    var displayImage = "";
-    var displayEmail = "";
-    var displayAddress = "";
-    var emailButton = "";
-    var checkedImage = "";
+    var selectedGroup = ""; // ! Gruop Span 
+    var displayImage = ""; // ! card Image
+    var displayEmail = ""; // ! Card Email
+    var displayAddress = ""; // ! card Adress
+    var emailButton = ""; // ! card's Email btn
+    var checkedImage = ""; // ! 
     // ! Display Image
 
     var badges = "";
@@ -114,18 +115,18 @@ function displayContacts(arr = allContacts) {
     }
     // ! selected Group
     if (arr[i].group == "family") {
-      selectedGroupe = `<span class="family-select selected-group">${arr[i].group}</span>`;
+      selectedGroup = `<span class="family-select selected-group">${arr[i].group}</span>`;
     } else if (arr[i].group == "work") {
-      selectedGroupe = `<span class="work-select selected-group">${arr[i].group}</span>`;
+      selectedGroup = `<span class="work-select selected-group">${arr[i].group}</span>`;
     } else if (arr[i].group == "friends") {
-      selectedGroupe = `<span class="friend-select selected-group">${arr[i].group}</span>`;
+      selectedGroup = `<span class="friend-select selected-group">${arr[i].group}</span>`;
     } else if (arr[i].group == "school") {
-      selectedGroupe = `<span class="school-select selected-group">${arr[i].group}</span>`;
+      selectedGroup = `<span class="school-select selected-group">${arr[i].group}</span>`;
     } else if (arr[i].group == "other") {
-      selectedGroupe = `<span class="other-select selected-group">${arr[i].group}</span>`;
+      selectedGroup = `<span class="other-select selected-group">${arr[i].group}</span>`;
     }
     if (arr[i].emergency) {
-      selectedGroupe += `<span class="ms-2 d-flex align-items-center gap-1" style="color: #ff2056; background-color:#FFF1F2; padding:4px 8px; font-size:11px; border-radius:6px;"><i class="fa-solid fa-heart-pulse" ></i> emergency</span>`;
+      selectedGroup += `<span class="ms-2 d-flex align-items-center gap-1" style="color: #ff2056; background-color:#FFF1F2; padding:4px 8px; font-size:11px; border-radius:6px;"><i class="fa-solid fa-heart-pulse" ></i> emergency</span>`;
     }
     // ! Checked Image
     if (arr[i].image) {
@@ -190,7 +191,7 @@ function displayContacts(arr = allContacts) {
                             ${displayAddress}
                           </div>
                           <div class="mt-2 d-flex">
-                          ${selectedGroupe}
+                          ${selectedGroup}
                           </div>
                         </div>
                       </div>
@@ -254,7 +255,7 @@ function displayFavorite() {
   var favList = allContacts.filter(function (contact) {
     return contact.favorite;
   });
-  var favCount = favList.length;
+  var favCount = favList.length; // ! display count of favorites
   var favMarkUp = "";
   for (var i = 0; i < favList.length; i++) {
     var checkedImage;
